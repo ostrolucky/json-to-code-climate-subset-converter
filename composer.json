@@ -78,6 +78,9 @@
         "docker-build": "docker build -t converter ."
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true
+        }
     }
 }

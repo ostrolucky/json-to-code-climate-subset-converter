@@ -121,12 +121,16 @@ class TestCase extends BaseTestCase
                 'validator' => PHPCSFixerJsonValidator::class,
                 'converter' => PHPCSFixerConvertToSubset::class,
                 'output' => [
+                    'categories' => ['Style'],
+                    'check_name' => 'no_unused_imports',
                     'description' => '(PHP-CS-Fixer) no_unused_imports',
                     'fingerprint' => '2b59a749eafbae30d4960873cc966ad1',
+                    'severity' => 'minor',
                     'location' => [
                         'path' => 'app/Class.php',
                         'lines' => [
                             'begin' => 0,
+                            'end' => 0
                         ],
                     ],
                 ],
