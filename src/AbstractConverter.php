@@ -11,9 +11,7 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\ConvertToSubsetInterface;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\OutputInterface;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\SafeMethodsInterface;
-
 use function debug_backtrace;
-
 use LogicException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\StringsException;

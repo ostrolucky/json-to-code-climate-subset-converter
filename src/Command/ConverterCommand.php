@@ -14,16 +14,12 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToWriteOutputLine;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\SafeMethodsInterface;
-
 use function file_exists;
-
 use PHLAK\Config\Config;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\StringsException;
-
 use function strtolower;
-
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

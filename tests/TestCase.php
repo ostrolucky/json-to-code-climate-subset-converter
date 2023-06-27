@@ -105,6 +105,8 @@ class TestCase extends BaseTestCase
                 'validator' => PsalmJsonValidator::class,
                 'converter' => PsalmConvertToSubset::class,
                 'output' => [
+                    'categories' => ['Bug Risk'],
+                    'check_name' => 'PropertyNotSetInConstructor',
                     'description' => '(Psalm) Property Illuminate\\Foundation\\Console\\Kernel::$artisan is not defined in constructor of App\\Console\\Kernel and in any methods called in the constructor',
                     'fingerprint' => '206df1cdb86fc7fc14b049a658832473',
                     'severity' => 'minor',

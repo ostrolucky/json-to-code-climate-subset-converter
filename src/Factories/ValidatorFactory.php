@@ -13,7 +13,6 @@ use BeechIt\JsonToCodeClimateSubsetConverter\PHPCSFixer\PHPCSFixerJsonValidator;
 use BeechIt\JsonToCodeClimateSubsetConverter\PHPLint\PhpLintJsonValidator;
 use BeechIt\JsonToCodeClimateSubsetConverter\PHPStan\PHPStanJsonValidator;
 use BeechIt\JsonToCodeClimateSubsetConverter\Psalm\PsalmJsonValidator;
-
 use function is_null;
 
 class ValidatorFactory implements ValidatorFactoryInterface

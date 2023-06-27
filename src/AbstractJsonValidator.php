@@ -7,9 +7,7 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\InvalidJsonException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\JsonValidatorInterface;
-
 use function debug_backtrace;
-
 use LogicException;
 
 abstract class AbstractJsonValidator implements JsonValidatorInterface

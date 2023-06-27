@@ -8,7 +8,6 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\FilesystemException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\JsonException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\StringsException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\SafeMethodsInterface;
-
 use function error_clear_last;
 use function error_get_last;
 use function file_get_contents;
