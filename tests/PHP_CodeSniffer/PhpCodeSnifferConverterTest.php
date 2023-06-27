@@ -40,6 +40,8 @@ class PhpCodeSnifferConverterTest extends TestCase
         $this->assertEquals(
             [
                 [
+                    'categories' => ['Style'],
+                    'check_name' => 'PEAR.Commenting.FileComment.Missing',
                     'description' => '(PHP_CodeSniffer) Missing file doc comment',
                     'fingerprint' => 'fa33b2f8044e0f23de6b53f15d4d7bc9',
                     'severity' => 'major',
@@ -47,6 +49,7 @@ class PhpCodeSnifferConverterTest extends TestCase
                         'path' => 'app/Class.php',
                         'lines' => [
                             'begin' => 2,
+                            'end' => 2,
                         ],
                     ],
                 ],

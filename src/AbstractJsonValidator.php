@@ -7,12 +7,14 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\InvalidJsonException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\JsonValidatorInterface;
+
 use function debug_backtrace;
+
 use LogicException;
 
 abstract class AbstractJsonValidator implements JsonValidatorInterface
 {
-    const DEBUG_BACKTRACE_LIMIT = 2;
+    public const DEBUG_BACKTRACE_LIMIT = 2;
 
     /**
      * @var array

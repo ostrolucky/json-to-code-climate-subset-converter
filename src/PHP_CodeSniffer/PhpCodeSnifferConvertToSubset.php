@@ -17,6 +17,8 @@ final class PhpCodeSnifferConvertToSubset extends AbstractConverter
             foreach ($this->json->files as $filename => $file) {
                 foreach ($file->messages as $node) {
                     $this->codeClimateNodes[] = [
+                        'categories' => ['Style'],
+                        'check_name' => $node->source,
                         'description' => $this->createDescription($node->message),
                         'fingerprint' => $this->createFingerprint(
                             $node->message,
@@ -28,6 +30,7 @@ final class PhpCodeSnifferConvertToSubset extends AbstractConverter
                             'path' => $filename,
                             'lines' => [
                                 'begin' => $node->line,
+                                'end' => $node->line,
                             ],
                         ],
                     ];

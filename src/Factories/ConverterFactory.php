@@ -16,6 +16,7 @@ use BeechIt\JsonToCodeClimateSubsetConverter\PHPLint\PhpLintConvertToSubset;
 use BeechIt\JsonToCodeClimateSubsetConverter\PHPStan\PHPStanConvertToSubset;
 use BeechIt\JsonToCodeClimateSubsetConverter\Psalm\PsalmConvertToSubset;
 use BeechIt\JsonToCodeClimateSubsetConverter\Utilities\SafeMethods;
+
 use function is_null;
 
 class ConverterFactory implements ConverterFactoryInterface

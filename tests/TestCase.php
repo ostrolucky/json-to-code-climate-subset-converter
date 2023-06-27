@@ -50,6 +50,8 @@ class TestCase extends BaseTestCase
                 'validator' => PhpCodeSnifferJsonValidator::class,
                 'converter' => PhpCodeSnifferConvertToSubset::class,
                 'output' => [
+                    'categories' => ['Style'],
+                    'check_name' => 'PEAR.Commenting.FileComment.Missing',
                     'description' => '(PHP_CodeSniffer) Missing file doc comment',
                     'fingerprint' => 'fa33b2f8044e0f23de6b53f15d4d7bc9',
                     'severity' => 'major',
@@ -57,6 +59,7 @@ class TestCase extends BaseTestCase
                         'path' => 'app/Class.php',
                         'lines' => [
                             'begin' => 2,
+                            'end' => 2,
                         ],
                     ],
                 ],
@@ -130,7 +133,7 @@ class TestCase extends BaseTestCase
                         'path' => 'app/Class.php',
                         'lines' => [
                             'begin' => 0,
-                            'end' => 0
+                            'end' => 0,
                         ],
                     ],
                 ],

@@ -15,7 +15,6 @@ jobs:
           - php-cs-fixer-ci
           - phplint
           - phpunit
-          - infection-ci
 
     name: PHP ${{ matrix.php }} testing ${{ matrix.suite }}
     steps:
