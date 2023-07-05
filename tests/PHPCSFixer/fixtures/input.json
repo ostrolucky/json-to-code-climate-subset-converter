@@ -1,14 +1,18 @@
 [
     {
+        "check_name": "no_unused_imports",
         "description": "no_unused_imports",
+        "categories": [
+            "Style"
+        ],
         "fingerprint": "4c6c9d61954474b2ddfa2bbc062cb74f",
         "severity": "minor",
         "location": {
             "path": "app/Class.php",
             "lines": {
-                "begin": 0
+                "begin": 5,
+                "end": 7
             }
         }
     }
 ]
-

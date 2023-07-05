@@ -10,11 +10,11 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\StringsException;
 
 interface SafeMethodsInterface
 {
-    const JSON_ENCODE_OPTIONS = 0;
-    const JSON_ENCODE_DEPTH = 512;
-    const JSON_DECODE_OPTIONS = 0;
-    const JSON_DECODE_DEPTH = 512;
-    const FILE_PUT_CONTENTS_FLAGS = 0;
+    public const JSON_ENCODE_OPTIONS = 0;
+    public const JSON_ENCODE_DEPTH = 512;
+    public const JSON_DECODE_OPTIONS = 0;
+    public const JSON_DECODE_DEPTH = 512;
+    public const FILE_PUT_CONTENTS_FLAGS = 0;
 
     /**
      * @param mixed $value
@@ -28,9 +28,9 @@ interface SafeMethodsInterface
     ): string;
 
     /**
-     * @throws JsonException
-     *
      * @return mixed
+     *
+     * @throws JsonException
      */
     public function json_decode(
         string $json,

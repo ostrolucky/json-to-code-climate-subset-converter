@@ -17,20 +17,21 @@ final class PHPCSFixerConvertToSubset extends AbstractConverter
 
         foreach ($this->json as $node) {
             $this->codeClimateNodes[] = [
-                'categories' => ['Style'],
-                'check_name' => $node->description,
+                'categories' => $node->categories,
+                'check_name' => $node->check_name,
                 'description' => $this->createDescription($node->description),
                 'fingerprint' => $this->createFingerprint(
                     $node->description,
                     $node->location->path,
-                    $node->location->lines->begin
+                    $node->location->lines->begin,
+                    $node->location->lines->end,
                 ),
                 'severity' => $node->severity,
                 'location' => [
                     'path' => $node->location->path,
                     'lines' => [
                         'begin' => $node->location->lines->begin,
-                        'end' => $node->location->lines->begin,
+                        'end' => $node->location->lines->end,
                     ],
                 ],
             ];

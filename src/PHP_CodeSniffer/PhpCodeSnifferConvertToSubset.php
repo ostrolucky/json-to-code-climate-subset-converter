@@ -23,7 +23,8 @@ final class PhpCodeSnifferConvertToSubset extends AbstractConverter
                         'fingerprint' => $this->createFingerprint(
                             $node->message,
                             $filename,
-                            $node->line
+                            $node->line,
+                            $node->line,
                         ),
                         'severity' => $this->getSeverity($node->type),
                         'location' => [

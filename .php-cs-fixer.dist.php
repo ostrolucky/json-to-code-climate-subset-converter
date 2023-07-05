@@ -4,7 +4,7 @@
  * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.16.1|configurator
  * you can change this configuration by importing this file.
  */
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setRules([
         '@PSR1' => true,

@@ -14,27 +14,28 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToWriteOutputLine;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\SafeMethodsInterface;
-use function file_exists;
 use PHLAK\Config\Config;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\StringsException;
-use function strtolower;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
+use function file_exists;
+use function strtolower;
+
 class ConverterCommand extends Command
 {
-    const EXIT_NO_ERRORS = 0;
-    const EXIT_NO_FILE_FOUND = 1;
-    const EXIT_UNABLE_TO_DECODE_FILE = 2;
-    const EXIT_NO_CONVERTER_INCLUDED = 3;
-    const EXIT_UNABLE_TO_WRITE_FILE = 4;
-    const EXIT_UNABLE_TO_GET_ENCODED_OUTPUT = 5;
-    const EXIT_UNABLE_TO_GET_FILE_CONTENTS = 6;
-    const EXIT_FAIL_ON_CONVERT = 7;
+    public const EXIT_NO_ERRORS = 0;
+    public const EXIT_NO_FILE_FOUND = 1;
+    public const EXIT_UNABLE_TO_DECODE_FILE = 2;
+    public const EXIT_NO_CONVERTER_INCLUDED = 3;
+    public const EXIT_UNABLE_TO_WRITE_FILE = 4;
+    public const EXIT_UNABLE_TO_GET_ENCODED_OUTPUT = 5;
+    public const EXIT_UNABLE_TO_GET_FILE_CONTENTS = 6;
+    public const EXIT_FAIL_ON_CONVERT = 7;
 
     /**
      * @var Config

@@ -20,7 +20,8 @@ class PhpLintConvertToSubset extends AbstractConverter
                     'fingerprint' => $this->createFingerprint(
                         $node->error,
                         $node->file_name,
-                        $node->line
+                        $node->line,
+                        $node->line,
                     ),
                     'location' => [
                         'path' => $node->file_name,

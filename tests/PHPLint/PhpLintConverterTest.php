@@ -12,11 +12,12 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\PHPLint\PhpLintConvertToSubset;
 use BeechIt\JsonToCodeClimateSubsetConverter\Tests\TestCase;
 use BeechIt\JsonToCodeClimateSubsetConverter\Utilities\SafeMethods;
-use function file_get_contents;
-use function json_decode;
 use LogicException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\StringsException;
+
+use function file_get_contents;
+use function json_decode;
 
 /**
  * @internal
@@ -49,7 +50,7 @@ class PhpLintConverterTest extends TestCase
             [
                 [
                     'description' => "(PHPLint) unexpected 'public' (T_PUBLIC), expecting ',' or ';' in line 2",
-                    'fingerprint' => '9c0b73852026abfb670dd243d3b3c8f1',
+                    'fingerprint' => '10fae914daf98cbd49278d2962b8ad4e',
                     'location' => [
                         'path' => 'app/Class.php',
                         'lines' => [

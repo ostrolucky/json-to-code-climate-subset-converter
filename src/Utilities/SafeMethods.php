@@ -8,6 +8,7 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\FilesystemException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\JsonException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\StringsException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\SafeMethodsInterface;
+
 use function error_clear_last;
 use function error_get_last;
 use function file_get_contents;
@@ -45,9 +46,9 @@ class SafeMethods implements SafeMethodsInterface
     }
 
     /**
-     * @throws JsonException
-     *
      * @return mixed
+     *
+     * @throws JsonException
      */
     public function json_decode(
         string $json,
@@ -167,12 +168,9 @@ class SafeMethods implements SafeMethodsInterface
     }
 
     /**
-     * @param $context
-     * @param $data
-     *
      * @return false|int
      */
-    private function nativeFilePutContents($context, string $filename, $data, int $flags)
+    private function nativeFilePutContents(mixed $context, string $filename, mixed $data, int $flags)
     {
         if (null !== $context) {
             $result = file_put_contents($filename, $data, $flags, $context);
@@ -184,7 +182,7 @@ class SafeMethods implements SafeMethodsInterface
     }
 
     /**
-     * @param $context
+     * @param null|resource $context
      *
      * @return false|string
      */

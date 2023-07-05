@@ -7,6 +7,7 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Tests\Psalm;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Tests\TestCase;
+
 use function file_get_contents;
 use function json_decode;
 
@@ -43,7 +44,7 @@ class PsalmConverterTest extends TestCase
                     'categories' => ['Bug Risk'],
                     'check_name' => 'PropertyNotSetInConstructor',
                     'description' => '(Psalm) Property Illuminate\\Foundation\\Console\\Kernel::$artisan is not defined in constructor of App\\Console\\Kernel and in any methods called in the constructor',
-                    'fingerprint' => '206df1cdb86fc7fc14b049a658832473',
+                    'fingerprint' => 'a1390ad03dfc4c048ca4023b9a2c7d3d',
                     'severity' => 'minor',
                     'location' => [
                         'path' => 'app/Class.php',

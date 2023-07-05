@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace BeechIt\JsonToCodeClimateSubsetConverter\Tests\Command;
 
-use function basename;
 use BeechIt\JsonToCodeClimateSubsetConverter\Command\ConverterCommand;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToAddOption;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToCreateFilenameException;
@@ -14,16 +13,18 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Tests\TestCase;
 use BeechIt\JsonToCodeClimateSubsetConverter\Utilities\SafeMethods;
-use function file_get_contents;
-use function json_decode;
 use PHLAK\Config\Config;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\StringsException;
-use function sprintf;
-use function strtolower;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
+
+use function basename;
+use function file_get_contents;
+use function json_decode;
+use function sprintf;
+use function strtolower;
 
 /**
  * @internal

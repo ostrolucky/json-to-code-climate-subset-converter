@@ -33,7 +33,7 @@ class TestCase extends BaseTestCase
                 'converter' => PhanConvertToSubset::class,
                 'output' => [
                     'description' => '(Phan) UndefError PhanUndeclaredClassConstant Reference to constant class from undeclared class \PhpParser\Node\Stmt\ClassMethod',
-                    'fingerprint' => 'e8547906ee21b4f8e8804de980a9d239',
+                    'fingerprint' => '99e39ad9a68edd27065f33894a4e3386',
                     'location' => [
                         'path' => 'app/Class.php',
                         'lines' => [
@@ -53,7 +53,7 @@ class TestCase extends BaseTestCase
                     'categories' => ['Style'],
                     'check_name' => 'PEAR.Commenting.FileComment.Missing',
                     'description' => '(PHP_CodeSniffer) Missing file doc comment',
-                    'fingerprint' => 'fa33b2f8044e0f23de6b53f15d4d7bc9',
+                    'fingerprint' => 'fff44d7f0a7aaba31f6f8cdfc0e32598',
                     'severity' => 'major',
                     'location' => [
                         'path' => 'app/Class.php',
@@ -72,7 +72,7 @@ class TestCase extends BaseTestCase
                 'converter' => PhpLintConvertToSubset::class,
                 'output' => [
                     'description' => "(PHPLint) unexpected 'public' (T_PUBLIC), expecting ',' or ';' in line 2",
-                    'fingerprint' => '9c0b73852026abfb670dd243d3b3c8f1',
+                    'fingerprint' => '10fae914daf98cbd49278d2962b8ad4e',
                     'location' => [
                         'path' => 'app/Class.php',
                         'lines' => [
@@ -89,7 +89,7 @@ class TestCase extends BaseTestCase
                 'converter' => PHPStanConvertToSubset::class,
                 'output' => [
                     'description' => '(PHPStan) Return type (array) of method App\Class::processNode() should be covariant with return type (array<PHPStan\Rules\RuleError|string>) of method PHPStan\Rules\Rule::processNode()',
-                    'fingerprint' => '44fee3bc600b885c545139e2f5cfb49d',
+                    'fingerprint' => '33a80151c3b863041dbafff13932b7fd',
                     'location' => [
                         'path' => 'app/Class.php',
                         'lines' => [
@@ -108,7 +108,7 @@ class TestCase extends BaseTestCase
                     'categories' => ['Bug Risk'],
                     'check_name' => 'PropertyNotSetInConstructor',
                     'description' => '(Psalm) Property Illuminate\\Foundation\\Console\\Kernel::$artisan is not defined in constructor of App\\Console\\Kernel and in any methods called in the constructor',
-                    'fingerprint' => '206df1cdb86fc7fc14b049a658832473',
+                    'fingerprint' => 'a1390ad03dfc4c048ca4023b9a2c7d3d',
                     'severity' => 'minor',
                     'location' => [
                         'path' => 'app/Class.php',
@@ -129,13 +129,13 @@ class TestCase extends BaseTestCase
                     'categories' => ['Style'],
                     'check_name' => 'no_unused_imports',
                     'description' => '(PHP-CS-Fixer) no_unused_imports',
-                    'fingerprint' => '2b59a749eafbae30d4960873cc966ad1',
+                    'fingerprint' => '845a60d662be89526ed15f15b02f9181',
                     'severity' => 'minor',
                     'location' => [
                         'path' => 'app/Class.php',
                         'lines' => [
-                            'begin' => 0,
-                            'end' => 0,
+                            'begin' => 5,
+                            'end' => 7,
                         ],
                     ],
                 ],

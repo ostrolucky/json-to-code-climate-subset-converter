@@ -22,7 +22,8 @@ final class PsalmConvertToSubset extends AbstractConverter
                     'fingerprint' => $this->createFingerprint(
                         $node->message,
                         $node->file_name,
-                        $node->line_from
+                        $node->line_from,
+                        $node->line_to,
                     ),
                     'severity' => $this->getSeverity($node->severity),
                     'location' => [

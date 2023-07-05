@@ -11,14 +11,15 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\ConvertToSubsetInterface;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\OutputInterface;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\SafeMethodsInterface;
-use function debug_backtrace;
 use LogicException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\StringsException;
 
+use function debug_backtrace;
+
 abstract class AbstractConverter implements OutputInterface, ConvertToSubsetInterface
 {
-    const DEBUG_BACKTRACE_LIMIT = 2;
+    public const DEBUG_BACKTRACE_LIMIT = 2;
 
     /**
      * @var AbstractJsonValidator
@@ -88,15 +89,17 @@ abstract class AbstractConverter implements OutputInterface, ConvertToSubsetInte
     protected function createFingerprint(
         string $description,
         string $filename,
-        int $line
+        int $lineBegin,
+        int $lineEnd
     ): string {
         try {
             return md5(
                 $this->safeMethods->sprintf(
-                    '%s%s%s',
+                    '%s%s%s%s',
                     $description,
                     $filename,
-                    $line
+                    $lineBegin,
+                    $lineEnd,
                 )
             );
         } catch (StringsException $exception) {

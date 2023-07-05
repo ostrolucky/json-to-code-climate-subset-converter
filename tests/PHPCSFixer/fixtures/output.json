@@ -5,13 +5,13 @@
         ],
         "check_name": "no_unused_imports",
         "description": "(PHP-CS-Fixer) no_unused_imports",
-        "fingerprint": "2b59a749eafbae30d4960873cc966ad1",
+        "fingerprint": "845a60d662be89526ed15f15b02f9181",
         "severity": "minor",
         "location": {
             "path": "app/Class.php",
             "lines": {
-                "begin": 0,
-                "end": 0
+                "begin": 5,
+                "end": 7
             }
         }
     }

@@ -9,9 +9,10 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToGetJsonEncodedOu
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Utilities\SafeMethods;
+use Safe\Exceptions\JsonException;
+
 use function file_get_contents;
 use function json_decode;
-use Safe\Exceptions\JsonException;
 
 /**
  * @internal

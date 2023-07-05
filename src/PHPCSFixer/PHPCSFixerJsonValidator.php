@@ -31,6 +31,10 @@ class PHPCSFixerJsonValidator extends AbstractJsonValidator
             if (!property_exists($node->location->lines, 'begin')) {
                 throw new InvalidJsonException('The [location.lines.begin] is a required property');
             }
+
+            if (!property_exists($node, 'check_name')) {
+                throw new InvalidJsonException('The [check_name] is a required property');
+            }
         }
     }
 }

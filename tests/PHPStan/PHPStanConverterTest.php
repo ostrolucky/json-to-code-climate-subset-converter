@@ -64,7 +64,7 @@ class PHPStanConverterTest extends TestCase
             [
                 [
                     'description' => '(PHPStan) Return type (array) of method App\Class::processNode() should be covariant with return type (array<PHPStan\Rules\RuleError|string>) of method PHPStan\Rules\Rule::processNode()',
-                    'fingerprint' => '44fee3bc600b885c545139e2f5cfb49d',
+                    'fingerprint' => '33a80151c3b863041dbafff13932b7fd',
                     'location' => [
                         'path' => 'app/Class.php',
                         'lines' => [

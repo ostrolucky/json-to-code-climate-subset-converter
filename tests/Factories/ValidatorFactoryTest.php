@@ -7,6 +7,7 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Tests\Factories;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\NoValidatorsEnabledException;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Tests\TestCase;
+
 use function file_get_contents;
 use function json_decode;
 

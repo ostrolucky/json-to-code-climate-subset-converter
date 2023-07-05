@@ -20,7 +20,8 @@ final class PhanConvertToSubset extends AbstractConverter
                     'fingerprint' => $this->createFingerprint(
                         $node->description,
                         $node->location->path,
-                        $node->location->lines->begin
+                        $node->location->lines->begin,
+                        $node->location->lines->end,
                     ),
                     'location' => [
                         'path' => $node->location->path,
