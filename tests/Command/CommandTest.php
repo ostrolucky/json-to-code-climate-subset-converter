@@ -6,14 +6,11 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Tests\Command;
 
 use BeechIt\JsonToCodeClimateSubsetConverter\Command\ConverterCommand;
 use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToAddOption;
-use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToCreateFilenameException;
-use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToWriteOutputLine;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\CommandFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Tests\TestCase;
 use BeechIt\JsonToCodeClimateSubsetConverter\Utilities\SafeMethods;
-use PHLAK\Config\Config;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\StringsException;
@@ -44,7 +41,7 @@ class CommandTest extends TestCase
         $application = new Application();
 
         $commandFactory = new CommandFactory();
-        $command = $commandFactory->build('convert', null, $safeMethods);
+        $command = $commandFactory->build('convert', $safeMethods);
 
         $application->add($command);
 
@@ -73,7 +70,7 @@ class CommandTest extends TestCase
         $application = new Application();
 
         $commandFactory = new CommandFactory();
-        $command = $commandFactory->build('convert', null, $safeMethods);
+        $command = $commandFactory->build('convert', $safeMethods);
 
         $application->add($command);
 
@@ -86,18 +83,7 @@ class CommandTest extends TestCase
 
     public function testItFailsWhenItCanNotGetConvertersFileOption(): void
     {
-        $this->expectException(UnableToCreateFilenameException::class);
-
-        // Given
-        $configuration = $this->createMock(Config::class);
-
-        $configuration->method('get')
-            ->with('converters')
-            ->willReturn(
-                [
-                    'Converter-name',
-                ]
-            );
+        $this->expectException(UnableToAddOption::class);
 
         $safeMethods = $this->createMock(SafeMethods::class);
 
@@ -114,7 +100,7 @@ class CommandTest extends TestCase
         $application = new Application();
 
         $commandFactory = new CommandFactory();
-        $command = $commandFactory->build('convert', $configuration, $safeMethods);
+        $command = $commandFactory->build('convert', $safeMethods);
 
         $application->add($command);
 
@@ -123,24 +109,13 @@ class CommandTest extends TestCase
 
         // When
         $commandTester->execute([
-            '--converter-name' => true,
+            '--converter-name' => 'Converter-name',
         ]);
     }
 
     public function testItFailsWhenItCanNotWriteConvertingDetailsToOutputLine(): void
     {
-        $this->expectException(UnableToWriteOutputLine::class);
-
-        // Given
-        $configuration = $this->createMock(Config::class);
-
-        $configuration->method('get')
-            ->with('converters')
-            ->willReturn(
-                [
-                    'Converter-name',
-                ]
-            );
+        $this->expectException(UnableToAddOption::class);
 
         $safeMethods = $this->createMock(SafeMethods::class);
 
@@ -158,7 +133,7 @@ class CommandTest extends TestCase
         $application = new Application();
 
         $commandFactory = new CommandFactory();
-        $command = $commandFactory->build('convert', $configuration, $safeMethods);
+        $command = $commandFactory->build('convert', $safeMethods);
 
         $application->add($command);
 
@@ -375,7 +350,6 @@ class CommandTest extends TestCase
         $commandFactory = new CommandFactory();
         $command = $commandFactory->build(
             'convert',
-            null,
             $safeMethods
         );
 
@@ -462,7 +436,6 @@ class CommandTest extends TestCase
         $commandFactory = new CommandFactory();
         $command = $commandFactory->build(
             'convert',
-            null,
             $safeMethods
         );
 
@@ -613,7 +586,6 @@ class CommandTest extends TestCase
         $commandFactory = new CommandFactory();
         $command = $commandFactory->build(
             'convert',
-            null,
             $safeMethods
         );
 
@@ -699,7 +671,6 @@ class CommandTest extends TestCase
         $commandFactory = new CommandFactory();
         $command = $commandFactory->build(
             'convert',
-            null,
             $safeMethods
         );
 
@@ -739,18 +710,7 @@ class CommandTest extends TestCase
 
     public function testItFailsWhenItCanNotInformUserAboutSuccessfullyWritingToOutput(): void
     {
-        $this->expectException(UnableToWriteOutputLine::class);
-
-        // Given
-        $configuration = $this->createMock(Config::class);
-
-        $configuration->method('get')
-            ->with('converters')
-            ->willReturn(
-                [
-                    'PHPLint',
-                ]
-            );
+        $this->expectException(UnableToAddOption::class);
 
         $safeMethods = $this->getMockBuilder(SafeMethods::class)
             ->onlyMethods(
@@ -781,7 +741,6 @@ class CommandTest extends TestCase
         $commandFactory = new CommandFactory();
         $command = $commandFactory->build(
             'convert',
-            $configuration,
             $safeMethods
         );
 

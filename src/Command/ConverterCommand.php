@@ -14,7 +14,6 @@ use BeechIt\JsonToCodeClimateSubsetConverter\Exceptions\UnableToWriteOutputLine;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ConverterFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Factories\ValidatorFactory;
 use BeechIt\JsonToCodeClimateSubsetConverter\Interfaces\SafeMethodsInterface;
-use PHLAK\Config\Config;
 use Safe\Exceptions\FilesystemException;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\StringsException;
@@ -36,23 +35,22 @@ class ConverterCommand extends Command
     public const EXIT_UNABLE_TO_GET_ENCODED_OUTPUT = 5;
     public const EXIT_UNABLE_TO_GET_FILE_CONTENTS = 6;
     public const EXIT_FAIL_ON_CONVERT = 7;
-
-    /**
-     * @var Config
-     */
-    private $configuration;
+    private const CONVERTERS = [
+        'Phan',
+        'PHP_CodeSniffer',
+        'PHPLint',
+        'PHPStan',
+        'Psalm',
+        'PHP-CS-Fixer',
+    ];
 
     /**
      * @var SafeMethodsInterface
      */
     private $safeMethods;
 
-    public function __construct(
-        string $name,
-        Config $configuration,
-        SafeMethodsInterface $safeMethods
-    ) {
-        $this->configuration = $configuration;
+    public function __construct(string $name, SafeMethodsInterface $safeMethods)
+    {
         $this->safeMethods = $safeMethods;
 
         parent::__construct($name);
@@ -60,8 +58,7 @@ class ConverterCommand extends Command
 
     protected function configure(): void
     {
-        /** @var string $converter */
-        foreach ($this->configuration->get('converters') as $converter) {
+        foreach (self::CONVERTERS as $converter) {
             try {
                 $this->option($converter);
             } catch (UnableToAddOption $exception) {
@@ -91,10 +88,7 @@ class ConverterCommand extends Command
         $converter = new Converter($this->safeMethods);
         $exitCode = self::EXIT_NO_ERRORS;
 
-        /**
-         * @var string $supportedConverter
-         */
-        foreach ($this->configuration->get('converters') as $supportedConverter) {
+        foreach (self::CONVERTERS as $supportedConverter) {
             if (false !== $input->getOption(strtolower($supportedConverter))) {
                 try {
                     /** @var string $filename */
