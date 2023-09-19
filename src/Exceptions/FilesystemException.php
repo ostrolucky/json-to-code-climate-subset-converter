@@ -9,6 +9,4 @@ use ErrorException;
 /**
  * @codeCoverageIgnore
  */
-class FilesystemException extends ErrorException
-{
-}
+class FilesystemException extends ErrorException {}

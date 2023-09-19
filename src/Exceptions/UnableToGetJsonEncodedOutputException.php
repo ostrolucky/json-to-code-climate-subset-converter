@@ -6,6 +6,4 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Exceptions;
 
 use Exception;
 
-class UnableToGetJsonEncodedOutputException extends Exception
-{
-}
+class UnableToGetJsonEncodedOutputException extends Exception {}

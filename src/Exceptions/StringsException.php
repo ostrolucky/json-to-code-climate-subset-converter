@@ -9,6 +9,4 @@ use ErrorException;
 /**
  * @codeCoverageIgnore
  */
-class StringsException extends ErrorException
-{
-}
+class StringsException extends ErrorException {}

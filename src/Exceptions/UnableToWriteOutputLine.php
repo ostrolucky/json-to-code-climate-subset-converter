@@ -6,6 +6,4 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Exceptions;
 
 use Exception;
 
-class UnableToWriteOutputLine extends Exception
-{
-}
+class UnableToWriteOutputLine extends Exception {}

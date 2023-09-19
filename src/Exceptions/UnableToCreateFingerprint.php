@@ -6,6 +6,4 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Exceptions;
 
 use Exception;
 
-class UnableToCreateFingerprint extends Exception
-{
-}
+class UnableToCreateFingerprint extends Exception {}

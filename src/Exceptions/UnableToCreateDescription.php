@@ -6,6 +6,4 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Exceptions;
 
 use Exception;
 
-class UnableToCreateDescription extends Exception
-{
-}
+class UnableToCreateDescription extends Exception {}

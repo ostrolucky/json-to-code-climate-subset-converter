@@ -6,6 +6,4 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Exceptions;
 
 use Exception;
 
-class UnableToAddOption extends Exception
-{
-}
+class UnableToAddOption extends Exception {}

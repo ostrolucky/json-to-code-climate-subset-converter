@@ -6,6 +6,4 @@ namespace BeechIt\JsonToCodeClimateSubsetConverter\Exceptions;
 
 use Exception;
 
-class NoConvertersEnabledException extends Exception
-{
-}
+class NoConvertersEnabledException extends Exception {}
