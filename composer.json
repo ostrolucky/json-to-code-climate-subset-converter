@@ -29,7 +29,7 @@
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "phlak/config": "^7.0",
+        "phlak/config": "dev-master",
         "symfony/console": ">=4.4",
         "thecodingmachine/safe": "^2.5"
     },
